@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>
+    <b>Bar chat data</b>
+  </h1>
+
+  <table>
+    <tr>
+      <td style="width: 700px; height: 50%">
+        <canvas id="barChart"></canvas>
+      </td>
+
+    </tr>
+  </table>
+
+  <div style="margin-top: 40px">
+    <input style="display: none" class="btn btn-primary" type="file" (change)="onFileChanged($event)" #fileInput>
+    <button (click)="fileInput.click()">Select File</button>
+    <button [disabled]="selectedFile==null" style="margin-left: 10px" type="button" (click)="onProcess()" class="btn btn-primary">
+      Process File</button>
+  </div>
+
+
+  <div [ngClass]='alert.class' style="margin-top: 10px" *ngIf="alert.message" role="alert">
+    {{alert.message}}
+  </div>
+
+</div>
